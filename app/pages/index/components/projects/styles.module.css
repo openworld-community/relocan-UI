@@ -1,0 +1,9 @@
+.wrapper {
+    padding: 40px 0;
+}
+
+.items {
+    display: flex;
+    gap: 64px;
+    padding-right: 64px;
+}

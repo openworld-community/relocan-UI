@@ -1,0 +1,13 @@
+:root {
+    --dark-grey: #3D3D3D;
+    --medium-grey: #B0B0B0;
+    --grey: #B0B0B0;
+    --white: #FEFDFF;
+    --light-blue: #8B96FF;
+    --dark-blue: #030B26;
+    --blue: #5C6DFE;
+    --gradient: linear-gradient(134deg, #000 0%, #061444 54.48%, #6777FF 100%);
+    --gradient-2: linear-gradient(124deg, #FFF 0%, #8B96FF 100%);
+
+    --max-width: 1620px;
+}
