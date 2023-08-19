@@ -51,7 +51,6 @@ export const ButtonStyled = styled.button`
         border: 2px solid var(--dark-blue);
       }
     }
-    
   }
   
   & > div {
