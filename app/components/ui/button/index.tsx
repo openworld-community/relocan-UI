@@ -1,33 +1,26 @@
-"use client"
+'use client';
 
-import type { ReactElement, ReactNode, ButtonHTMLAttributes } from 'react'
+import type { ReactElement } from 'react';
 
-import { IconArrow } from "@/app/icons";
-import { ButtonStyled, DivButton } from "@/app/components/ui/button/styled";
+import { IconArrow } from '@/app/icons';
+import { StyledButton } from '@/app/components/ui/button/button.styled';
+import { IButtonProps } from './button.types';
 
-type ComponentProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-    children?: ReactNode
-    variant: 'light' | 'dark' | 'outlined'
-    addArrow?: boolean
-    isDiv?: boolean
-}
+export function Button(props: IButtonProps): ReactElement<HTMLButtonElement> {
+  const { children, variant, isDiv, addArrow, icon, iconPos, ...otherProps } =
+    props;
 
-export function Button(props: ComponentProps): ReactElement<HTMLButtonElement> {
-    const { children, variant, isDiv, addArrow, ...otherProps } = props
-
-    if(isDiv) {
-        return (
-            <DivButton className={variant}>
-                {children}
-                {addArrow && <IconArrow/> }
-            </DivButton>
-        )
-    } else {
-        return (
-            <ButtonStyled className={variant} {...otherProps}>
-                {children}
-                {addArrow && <IconArrow/>}
-            </ButtonStyled>
-        )
-    }
+  return (
+    <StyledButton
+      {...(isDiv && { as: 'div' })}
+      $variant={variant}
+      {...otherProps}
+    >
+      {iconPos === 'left' && icon}
+      {children}
+      {iconPos === 'right' && icon}
+      {/* TODO: replace `addArrow` on `icon` */}
+      {addArrow && <IconArrow />}
+    </StyledButton>
+  );
 }
