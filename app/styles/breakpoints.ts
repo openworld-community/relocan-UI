@@ -11,18 +11,23 @@ const breakpointsValues: BreakpointsType['values'] = {
 };
 
 const getBreakpointValue = (
-  value: Parameters<BreakpointsType['up']>[0]
-): string =>
-  (typeof value === 'number' ? value : breakpointsValues[value]).toString();
+  value: Parameters<BreakpointsType['up']>[0],
+  direction: 'up' | 'down' = 'up'
+): string => {
+  const breakpointValue =
+    typeof value === 'number' ? value : breakpointsValues[value];
+  return (breakpointValue - Number(direction === 'down')).toString();
+};
 
 const breakpoints: BreakpointsType = {
   values: breakpointsValues,
-  up: (key) => `@media (min-width: ${getBreakpointValue(key)}px)`,
-  down: (key) => `@media (max-width: ${getBreakpointValue(key)}px)`,
+  up: (key) => `@media (min-width: ${getBreakpointValue(key, 'up')}px)`,
+  down: (key) => `@media (max-width: ${getBreakpointValue(key, 'down')}px)`,
   between: (start, stop) =>
     `@media (min-width: ${getBreakpointValue(
-      start
-    )}px) and (max-width: ${getBreakpointValue(stop)}px)`,
+      start,
+      'up'
+    )}px) and (max-width: ${getBreakpointValue(stop, 'down')}px)`,
 };
 
 export default breakpoints;
