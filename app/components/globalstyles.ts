@@ -29,6 +29,10 @@ const GlobalStyle = createGlobalStyle`
   .container {
     max-width: var(--max-width);
     margin: 0 auto;
+    
+    ${({theme}) => theme.breakpoints.down('lg')} {
+      padding: 0 20px;
+    }
   }
 `;
 

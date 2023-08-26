@@ -25,6 +25,12 @@ export const StyledButton = styled.button<{
   font-weight: 700;
   transition: background-color 0.3s linear, box-shadow 0.3s ease;
 
+  ${({theme}) => theme.breakpoints.down('md')} {
+    max-height: 50px;
+    padding: 13px;
+    font-size: 18px;
+  }
+
   &:focus {
     border: 1.5px solid var(--dark-blue);
   }

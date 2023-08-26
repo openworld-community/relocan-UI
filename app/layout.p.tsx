@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <StyledProvider>
           <GlobalStyles />
-          {children}
+            {children}
         </StyledProvider>
       </body>
     </html>

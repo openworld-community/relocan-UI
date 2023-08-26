@@ -4,13 +4,13 @@
     left: 0;
     width: 100%;
     z-index: 100;
+    padding: 48px 0;
 }
 
 .container {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 48px 0;
 }
 
 .top {
@@ -25,4 +25,14 @@
     gap: 24px;
     color: var(--light-blue);
     font-size: 24px;
+}
+
+.quantity {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;;
+}
+
+.quantity span {
+    color: var(--light-blue);
 }

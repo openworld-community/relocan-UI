@@ -14,6 +14,11 @@ export const ButtonStyled = styled.button`
   font-style: normal;
   font-weight: 700;
   transition: background-color 0.3s linear,  box-shadow 0.3s ease;
+
+  ${({theme}) => theme.breakpoints.down('md')} {
+    max-height: 54px;
+    font-size: 18px;
+  }
   
   &.light {
     border: none;

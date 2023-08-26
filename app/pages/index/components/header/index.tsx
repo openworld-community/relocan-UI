@@ -12,7 +12,9 @@ export const Header = () => (
                 <Button variant={"outlined"}>Вход</Button>
             </div>
             <div className={styles.bottom}>
-                c нами уже 248 человек
+                <div className={styles.quantity}>
+                    c нами уже <span>248</span> человек
+                </div>
             </div>
         </div>
     </header>
